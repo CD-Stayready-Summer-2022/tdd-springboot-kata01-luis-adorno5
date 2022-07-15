@@ -72,7 +72,8 @@ public class PersonControllerTest extends BaseControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id", Is.is(1)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Is.is("Luis")));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Is.is("Luis")))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.lastName", Is.is("Adorno")));
     }
 
     @Test
@@ -84,7 +85,8 @@ public class PersonControllerTest extends BaseControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.firstName", is("Luis")));
+                .andExpect(jsonPath("$.firstName", is("Luis")))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.lastName", Is.is("Adorno")));
     }
 
     @Test
@@ -110,7 +112,8 @@ public class PersonControllerTest extends BaseControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.firstName", is("Tony")));
+                .andExpect(jsonPath("$.firstName", is("Tony")))
+                .andExpect(jsonPath("$.lastName", Is.is("Cruz")));
     }
 
     @Test
